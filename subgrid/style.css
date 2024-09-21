@@ -1,0 +1,39 @@
+@charset 'utf-8';
+
+section {
+	width: 90%;
+	margin: 50px auto;
+	background: rgba(0, 255, 0, 0.2);
+}
+
+section h1 {
+	text-align: center;
+	padding: 1vw;
+	font-weight: 700;
+	font-size: 3vw;
+	color: #000;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	margin-top: 50px;
+}
+
+.grid-item {
+	border: 1px solid #000;
+	background: #fff;
+	padding: 20px;
+}
+
+.grid-item h2 {
+	font-weight: 800;
+	font-size: 2vw;
+}
+.grid-item p {
+	padding: 20px 0;
+}
+.grid-item figure {
+	aspect-ratio: 1/1.2;
+}
