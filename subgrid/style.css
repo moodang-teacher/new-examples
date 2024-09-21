@@ -9,8 +9,8 @@ section {
 section h1 {
 	text-align: center;
 	padding: 1vw;
-	font-weight: 700;
-	font-size: 3vw;
+	font-weight: 900;
+	font-size: max(4vw, 4rem);
 	color: #000;
 }
 
@@ -34,8 +34,9 @@ section h1 {
 }
 
 .grid-item h2 {
-	font-weight: 800;
-	font-size: 2vw;
+	font-weight: 700;
+	font-size: max(2vw, 3rem);
+	color: #222;
 }
 .grid-item p {
 	padding: 20px 0;
