@@ -81,3 +81,17 @@
 .work-list li dl dd {
 	font-size: 18px;
 }
+
+@media (max-width: 1000px) {
+	.agency {
+		width: 80%;
+	}
+
+	.work-list {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	}
+
+	.work-list li:first-child {
+		grid-row: span 2;
+	}
+}
