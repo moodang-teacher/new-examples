@@ -1,12 +1,12 @@
 @charset 'utf-8';
 
-section {
+.blackpink {
 	width: 90%;
 	margin: 50px auto;
 	background: rgba(0, 255, 0, 0.2);
 }
 
-section h1 {
+.blackpink h1 {
 	text-align: center;
 	padding: 1vw;
 	font-weight: 900;
@@ -43,4 +43,41 @@ section h1 {
 }
 .grid-item figure {
 	aspect-ratio: 1/1.2;
+}
+
+.agency {
+	width: 1180px;
+	width: 61.4583%;
+	margin: 50px auto;
+	background: rgba(0, 255, 0, 0.2);
+}
+
+.work-list {
+	display: grid;
+	grid-template-columns: 1.5fr repeat(2, 1fr);
+	grid-template-columns: 1.455fr repeat(2, 1fr); /* 480, 330, 330 */
+
+	/* grid-template-rows: repeat(2, auto); */
+	gap: 20px;
+}
+
+.work-list li:first-child {
+	/* grid-template-areas: recent; */
+	grid-row: span 3;
+}
+
+.work-list li figure {
+	aspect-ratio: 1/0.7333;
+}
+
+.work-list li dl {
+	padding: 28px 0;
+}
+.work-list li dl dt {
+	font-weight: 700;
+	font-size: 24px;
+	color: #000;
+}
+.work-list li dl dd {
+	font-size: 18px;
 }
