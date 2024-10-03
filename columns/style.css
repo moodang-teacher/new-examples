@@ -16,4 +16,6 @@
 .use-columns {
 	/* col */
 	columns: 300px;
+	/* columns: clamp(300px, 600px, 900px); */
+	/* columns 속성은 열의 개수를 설정하는 것이 아니라, 열의 최소 너비를 설정합니다. */
 }
