@@ -1,0 +1,19 @@
+.black-pink {
+	width: 80%;
+	margin: 5vw auto;
+	gap: 1vw;
+}
+
+.black-pink li {
+	margin-bottom: 1vw;
+}
+
+.use-column-count {
+	/* colc */
+	column-count: 3;
+}
+
+.use-columns {
+	/* col */
+	columns: 300px;
+}
