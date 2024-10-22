@@ -2,6 +2,6 @@
 
 > 참 좋은 세상이로다!
 
-- subgrid
-- columns
-- border gradient
+- [subgrid](https://moodang-teacher.github.io/new-examples/subgrid/)
+- [columns](https://moodang-teacher.github.io/new-examples/columns)
+- [border gradient](https://moodang-teacher.github.io/new-examples/border-gradient/)
