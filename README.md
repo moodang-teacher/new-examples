@@ -5,3 +5,4 @@
 - [subgrid](https://moodang-teacher.github.io/new-examples/subgrid/)
 - [columns](https://moodang-teacher.github.io/new-examples/columns)
 - [border gradient](https://moodang-teacher.github.io/new-examples/border-gradient/)
+- [flex max()](https://moodang-teacher.github.io/new-examples/flex-max/)
