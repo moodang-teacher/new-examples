@@ -7,3 +7,4 @@
 - [border gradient](https://moodang-teacher.github.io/new-examples/border-gradient/)
 - [flex max()](https://moodang-teacher.github.io/new-examples/flex-max/)
 - [translate3d](https://moodang-teacher.github.io/new-examples/translate3d/)
+- [right full swiper](https://moodang-teacher.github.io/new-examples/full-swiper/)
