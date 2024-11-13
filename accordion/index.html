@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            ul,
+            ol,
+            li {
+                list-style: none;
+            }
+            .wrap {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 10px solid #eee;
+            }
+            .wrap ul {
+                width: 1000px;
+                height: 500px;
+                background: skyblue;
+                display: flex;
+                gap: 20px;
+            }
+            .wrap ul li {
+                border: 1px solid #000;
+                border-radius: 30px;
+            }
+
+            .wrap1 ul li {
+                flex: 1 1 100px;
+                transition: 0.4s;
+            }
+
+            .wrap1 ul li:hover {
+                flex-basis: 600px;
+            }
+
+            /* jQuery */
+            .wrap2 ul li {
+                flex: 1 1 100px;
+                transition: 0.4s;
+            }
+
+            .wrap2 ul li.active {
+                flex-basis: 600px;
+            }
+        </style>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function () {
+                $(".wrap2 ul li:first").addClass("active");
+                let index = 0;
+                setInterval(function () {
+                    $(".wrap2 ul li").removeClass("active");
+                    $(".wrap2 ul li").eq(index).addClass("active");
+                    index = (index + 1) % $(".wrap2 ul li").length;
+                }, 3000);
+            });
+        </script>
+    </head>
+    <body>
+        <!-- CSS -->
+        <div class="wrap wrap1">
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+                <li>item4</li>
+                <li>item5</li>
+            </ul>
+        </div>
+
+        <!-- jQuery -->
+        <div class="wrap wrap2">
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+                <li>item4</li>
+                <li>item5</li>
+            </ul>
+        </div>
+    </body>
+</html>
