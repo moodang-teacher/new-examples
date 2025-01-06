@@ -57,8 +57,15 @@
                 border-radius: 50px;
                 transform: rotate(-10deg);
                 background: orangered;
+                overflow: hidden;
                 z-index: 0;
                 filter: invert(1); /* point! */
+            }
+
+            .wrap .box img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         </style>
     </head>
@@ -66,7 +73,7 @@
         <div class="wrap">
             <div class="filter"></div>
             <h1>무소의 뿔처럼 혼자서 가라</h1>
-            <div class="box"></div>
+            <div class="box"><img src="https://www.prugio.com/blanc/img/amenity_img01b.jpg" alt="" /></div>
         </div>
     </body>
 </html>
