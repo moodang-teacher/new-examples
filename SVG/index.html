@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SVG</title>
+        <style>
+            @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            section {
+                height: 100vh;
+                padding: 5vw;
+            }
+
+            .sec1 {
+                background: #ffcccb;
+            }
+            .sec2 {
+                background: #cbffe2;
+            }
+            .sec3 {
+                background: #cbddff;
+            }
+
+            .wrap {
+                /* background: yellow; */
+                width: 100%;
+                height: 500px;
+                margin: 0 auto;
+            }
+
+            #text {
+                fill: none;
+                stroke-width: 2;
+                stroke: rgb(43, 168, 99);
+                width: 100%;
+                height: 100%;
+                /* border: 1px solid #000; */
+
+                font: 900 17vw/1 Pretendard, sans-serif;
+
+                stroke-dasharray: 2000;
+                stroke-dashoffset: 2000;
+
+                /* animation: write 24 s; */
+            }
+
+            @keyframes write {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js"></script>
+        <script src="https://unpkg.com/lenis@1.2.0/dist/lenis.min.js"></script>
+    </head>
+    <body>
+        <section class="sec1">
+            <h2>SECTION 1</h2>
+        </section>
+
+        <section class="sec2">
+            <div class="wrap">
+                <svg id="text" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="50%" text-anchor="middle">무소의 뿔처럼 혼자서 가라.</text>
+                </svg>
+            </div>
+        </section>
+
+        <section class="sec3">
+            <h2>SECTION 3</h2>
+        </section>
+
+        <script>
+            // Initialize Lenis
+            const lenis = new Lenis();
+
+            // Use requestAnimationFrame to continuously update the scroll
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.sec2',
+                    markers: true,
+                    pin: true,
+                    scrub: 1,
+                    start: 'top 0%',
+                    end: '+=500%', // trigger의 세로크기의 5배
+                },
+            });
+
+            tl.to('#text text', {
+                strokeDashoffset: 0,
+                duration: 3,
+                delay: 1,
+            });
+            tl.to('#text text', { fill: 'rgb(12, 100, 52)', strokeWidth: 0, duration: 0.5 });
+            tl.to({}, { delay: 1 });
+        </script>
+    </body>
+</html>
