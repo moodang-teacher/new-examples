@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>kreation.co.kr</title>
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="spacer100"></div>
+        <div class="img-wrap">
+            <!-- overflow: hidden -->
+            <div class="text-wrap text-front">
+                <h2>KREATION MUSIC RIGHTS IS A GLOBAL MUSIC PUBLISHING COMPANY</h2>
+                <p>
+                    Dedicated to recruting top songwriters and producers for k-pop and beyond leading the international
+                    music market.
+                </p>
+                <p>
+                    As a subsidiary of SM Entertainment and Kakao Group, we empower writers to unleash their creativity,
+                    supported by a CIC (Company in Company) structure that nurtures their unique and versatile
+                    musicality. Our strong network and leverage solidify our unparalleled position in the Korean music
+                    market.
+                </p>
+            </div>
+        </div>
+        <div class="text-wrap text-back">
+            <h2>KREATION MUSIC RIGHTS IS A GLOBAL MUSIC PUBLISHING COMPANY</h2>
+            <p>
+                Dedicated to recruting top songwriters and producers for k-pop and beyond leading the international
+                music market.
+            </p>
+            <p>
+                As a subsidiary of SM Entertainment and Kakao Group, we empower writers to unleash their creativity,
+                supported by a CIC (Company in Company) structure that nurtures their unique and versatile musicality.
+                Our strong network and leverage solidify our unparalleled position in the Korean music market.
+            </p>
+        </div>
+        <div class="spacer400"></div>
+        <div class="spacer"></div>
+        <div class="fake"></div>
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script>
+            // Lenis 초기화
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                orientation: 'vertical',
+                smoothWheel: true,
+            });
+
+            // Lenis와 GSAP ScrollTrigger 연동
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // GSAP ScrollTrigger 설정
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Lenis와 ScrollTrigger 연동
+            lenis.on('scroll', ScrollTrigger.update);
+
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+
+            // 공통으로 사용할 ScrollTrigger 설정
+            const scrollConfig = {
+                trigger: '.img-wrap',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true,
+            };
+
+            // img-wrap 회전 애니메이션과 pin
+            gsap.to('.img-wrap', {
+                rotation: -20,
+                // y: '-100%',
+                scrollTrigger: {
+                    ...scrollConfig,
+                    pin: true,
+                },
+            });
+
+            // text-front 회전 애니메이션
+            gsap.to('.text-front', {
+                rotation: 20,
+                // y: '100%',
+                scrollTrigger: scrollConfig,
+            });
+
+            // text-wrap과 text-back 고정
+            ScrollTrigger.create({
+                ...scrollConfig,
+                pin: '.text-back',
+                pinSpacing: false,
+            });
+        </script>
+    </body>
+</html>

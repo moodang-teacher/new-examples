@@ -1,0 +1,96 @@
+@charset 'utf-8';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+:root {
+    font-size: 62.5%; /* 10px --> 1rem */
+    --main-color: #ff4d72;
+    --text-color: #666;
+    --line-color: #f3eee4;
+}
+
+::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+a {
+    text-decoration: none; /* tdn */
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+body {
+    font: 1.6rem/1.5 Pretendard, sans-serif;
+    color: var(--text-color);
+    word-break: keep-all;
+}
+
+.ice-cream {
+    padding: 100px 0;
+}
+
+.inner {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.ice-cream-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px 50px;
+}
+
+.ice-cream-list li {
+    width: 260px;
+    height: 250px;
+    /* background: pink; */
+    position: relative;
+}
+
+.ice-cream-list li figure {
+    height: 210px;
+    aspect-ratio: 1/0.8076923076923077;
+    border: 1px solid var(--line-color);
+    border-radius: 45px;
+    overflow: hidden;
+}
+
+.ice-cream-list li figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.ice-cream-list li figure + p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.ice-cream-list li .hash-tag {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    /* background: skyblue; */
+    text-align: center;
+    padding: 0 30px;
+    font-weight: 700;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.ice-cream-list li:hover figure img {
+    transform: translateY(100px);
+}
+
+.ice-cream-list li:hover .hash-tag {
+    top: 50px;
+    opacity: 1;
+}

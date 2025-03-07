@@ -1,0 +1,10 @@
+icecream01.png	키세스 브라우니 초콜릿		#키세스 #크림 #브라우니 #이달의맛	#af7a3b	#fff
+icecream02.png	치토스 밀크쉐이크 아이스크림	#치토스 #밀크쉐이크 #초콜릿		#a97157	#fff
+icecream03.png	아이스 도쿄바나나		#아이스도쿄바나나			#fcbf49	#f77f00
+icecream04.png	허니 크런치			#바닐라 #꿀 #크런치			#ebc349	#fff
+icecream05.png	오레오 쿠키 앤 콜드브루		#오레오 #콜드브루			#af7a3b	#fff
+icecream06.png	윈터 민트 초콜릿 칩		#민트 #초콜릿칩 #팝핑캔디		#6ca18f	#fff	
+icecream07.png	쫀떡궁합			#흑임자 #인절미 #프랄린피칸		#a97157	#fff
+icecream08.png	나주배 소르베		#나주배				#f5b21c	#fff
+icecream09.png	소금 우유 아이스크림		#소금우유 #단짠			#004e98	#fff
+icecream10.png	애플 민트			#그린애플 #민트 #사과			#9bb053	#fff
