@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>YouTube Video Control</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            section {
+                height: 100vh;
+                padding: 4vw;
+            }
+            section h2 {
+                font-weight: 4vw;
+                color: #fff;
+            }
+            .section1 {
+                background: skyblue;
+            }
+            .section2 {
+                background: yellowgreen;
+            }
+            .section3 {
+                background: tomato;
+            }
+            .video {
+                position: fixed;
+                top: 5%;
+                right: 5%;
+                border: 10px solid #000;
+                z-index: 100;
+            }
+        </style>
+        <script src="https://www.youtube.com/iframe_api"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    </head>
+    <body>
+        <div class="video">
+            <div id="player"></div>
+            <div>
+                <button id="pauseButton">Pause Video</button>
+                <button id="playButton">Play Video</button>
+            </div>
+        </div>
+        <section class="section1"><h2>SECTION 1</h2></section>
+        <section class="section2"><h2>SECTION 2</h2></section>
+        <section class="section3"><h2>SECTION 3</h2></section>
+
+        <script>
+            let player;
+
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '315',
+                    width: '560',
+                    videoId: 'YzuwW9xTvho',
+                    playerVars: {
+                        autoplay: 1, // 자동 재생 활성화
+                        controls: 0, // 플레이어 컨트롤러 숨김
+                        mute: 1, // 음소거 상태로 시작
+                        loop: 1, // 반복 재생 활성화
+                        playlist: 'YzuwW9xTvho', // 반복 재생을 위한 재생목록 설정
+                        rel: 0, // 동영상 일시정지/종료 시 추천 동영상 숨김 🚨 제대로 동작하지 않음
+                        modestbranding: 1, // YouTube 로고 최소화
+                        showinfo: 0, // 동영상 제목과 업로더 정보 숨김
+                    },
+                    events: {
+                        onReady: onPlayerReady,
+                        onStateChange: onPlayerStateChange,
+                    },
+                });
+            }
+
+            function onPlayerReady(event) {
+                // 비디오가 준비되면 재생
+                console.log(player);
+
+                event.target.playVideo();
+
+                // 버튼에 이벤트 리스너 추가
+                document.getElementById('pauseButton').addEventListener('click', function () {
+                    player.pauseVideo();
+                });
+
+                document.getElementById('playButton').addEventListener('click', function () {
+                    player.playVideo();
+                });
+
+                // ScrollTrigger
+                ScrollTrigger.create({
+                    trigger: '.section2',
+                    markers: true,
+                    start: 'top 0%',
+                    pin: true,
+                    onEnter: () => {
+                        player.pauseVideo();
+                        document.querySelector('.section2 h2').textContent = player.videoTitle;
+                    },
+                    onLeave: () => player.playVideo(),
+                    onEnterBack: () => player.pauseVideo(),
+                    onLeaveBack: () => player.playVideo(),
+                });
+            }
+
+            function onPlayerStateChange(event) {
+                // 필요한 경우 여기에 상태 변경 처리를 추가할 수 있습니다
+                console.log('Player State:', event.data);
+            }
+        </script>
+    </body>
+</html>
