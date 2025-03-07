@@ -10,4 +10,3 @@
 - [accordion](https://moodang-teacher.github.io/new-examples/accordion/)
 - [text invert](https://moodang-teacher.github.io/new-examples/text-invert/)
 - [text reveal](https://moodang-teacher.github.io/new-examples/text-reveal/)
-- [right full swiper](https://moodang-teacher.github.io/new-examples/full-swiper/)
