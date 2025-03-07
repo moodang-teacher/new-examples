@@ -11,6 +11,3 @@
 - [text invert](https://moodang-teacher.github.io/new-examples/text-invert/)
 - [text reveal](https://moodang-teacher.github.io/new-examples/text-reveal/)
 - [right full swiper](https://moodang-teacher.github.io/new-examples/full-swiper/)
-- [swiper center](https://moodang-teacher.github.io/new-examples/center-slide/)
-- [swiper video](https://moodang-teacher.github.io/new-examples/swiper-video/)
-- [swiper video & image](https://moodang-teacher.github.io/new-examples/swiper-video/index2.html)
